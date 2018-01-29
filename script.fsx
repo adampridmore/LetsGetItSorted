@@ -7,13 +7,9 @@ let sortList1 = List.sort
 
 //Quick sort
 let rec sortList2 list = 
-    let sort2 a b = 
-        match a,b with
-        | a,b when a<=b -> [a;b]
-        | _ -> [b;a]
-
     match list with
     | [] -> []
+    | [a] -> [a]
     | list -> 
         let firstValue = list |> Seq.head
         let left = list |> List.filter (fun x -> x < firstValue)
