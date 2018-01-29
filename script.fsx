@@ -1,7 +1,7 @@
 let rand = System.Random(0)
 let randomList size =
     seq{0..size}
-    |> Seq.map (fun _ -> rand.Next(100))
+    |> Seq.map (fun _ -> rand.Next(1000))
     |> Seq.toList
 let sortList1 = List.sort
 
@@ -35,5 +35,11 @@ let sortList3 list =
 [1;7;3;5;6;2;9;4;8]
 |> sortList3
 |> (printfn "%A")
+
+#time "on"
+ 
+randomList 1000000 |> sortList1
+randomList 100000 |> sortList2
+randomList 10000 |> sortList3
 
 
