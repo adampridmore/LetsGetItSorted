@@ -1,4 +1,4 @@
-let rand = new System.Random(0)
+let rand = System.Random(0)
 let randomList size =
     seq{0..size}
     |> Seq.map (fun _ -> rand.Next(100))
